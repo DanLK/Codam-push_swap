@@ -15,5 +15,23 @@ This project is about implementing an algorithm that sorts a stack (A) containin
 - **rrr**: Performs rra and rrb at the same time.
 
 
-For the stack implementation I used doubly linked lists, and I used the [Turk Algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97), created by Ali Ogun specifically for this project.  
+For the stack implementation I used doubly linked lists, and I used the [Turk Algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97), created by Ali Ogun specifically for this project. Here are some visuals of executions with 25, 100 and 500 random numbers, respectively. The visuals are generated with this [push_swap visualizer](https://github.com/o-reo/push_swap_visualizer).
+
+<figure align="center">
+	<img src="./gifs/25_numbers.gif" width="400" height="250" alt="GIF" style="float: center;">
+	<figcaption>Sorting 25 numbers</figcaption>
+</figure>
+
+<figure align="center">
+	<img src="./gifs/100_numbers.gif" width="400" height="250" alt="GIF" style="float: center;">
+	<figcaption>Sorting 100 numbers</figcaption>
+</figure>
+
+<figure  align="center">
+	<img src="./gifs/500_numbers.gif" width="400" height="250" alt="GIF" style="float: center;">
+	<figcaption>Sorting 500 numbers</figcaption>
+</figure>
+
+
+
 
