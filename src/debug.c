@@ -6,7 +6,7 @@
 /*   By: dloustal <dloustal@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/01/14 18:55:19 by dloustalot    #+#    #+#                 */
-/*   Updated: 2025/01/31 15:10:19 by dloustal      ########   odam.nl         */
+/*   Updated: 2025/03/10 14:08:35 by dloustal      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void	pretty_print_stack(t_stack **stack)
 		return ;
 	}
 	node = *stack;
+	if (!node)
+	{
+		ft_printf("Stack is empty\n");
+		return ;
+	}
 	while (node)
 	{
 		ft_printf("%d\n", node->num);

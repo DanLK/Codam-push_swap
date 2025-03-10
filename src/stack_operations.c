@@ -6,7 +6,7 @@
 /*   By: dloustal <dloustal@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/01/06 13:03:52 by dloustal      #+#    #+#                 */
-/*   Updated: 2025/02/04 11:19:33 by dloustal      ########   odam.nl         */
+/*   Updated: 2025/03/10 15:04:51 by dloustal      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,34 @@ void	swap(t_stack **stack)
 	update_median(stack);
 }
 
-/* Put the first element from the top of b at the top of a 
-PUSH A */
+/* Take the top element of b and put it on top of a */
 void	push(t_stack **a, t_stack **b, char na)
 {
-	t_stack	*first_b;
-	t_stack	*first_b_copy;
+	t_stack	*tmp;
 
 	if (!a || !b || !*b)
 		return ;
-	first_b = *b;
-	first_b_copy = ft_stack_new(first_b->num, na);
-	if (!first_b_copy)
-		return ;
+	tmp = *b;
+	tmp->name = na;
+	*b = (*b)->next;
+	if (*b)
+		(*b)->prev = NULL;
 	if (!*a)
-		ft_stack_add_back(a, first_b_copy);
+	{
+		*a = tmp;
+		(*a)->next = NULL;
+		(*a)->prev = NULL;
+	}
 	else
 	{
-		first_b_copy->next = *a;
-		(*a)->prev = first_b_copy;
+		(*a)->prev = tmp;
+		tmp->next = (*a);
+		*a = tmp;
+		(*a)->prev = NULL;
+		
 	}
-	if (first_b->next)
-		(first_b->next)->prev = NULL;
-	if (*a)
-		*a = first_b_copy;
-	*b = first_b->next;
 	update_stack(a);
 	update_stack(b);
-	free(first_b);
 }
 
 /* First element becomes last */
